@@ -27,6 +27,6 @@ public class UserController {
 
   @GetMapping("")
   public String getHomePage() {
-    return "hello from controller";
+    return this.userService.handleHello();
   }
 }
