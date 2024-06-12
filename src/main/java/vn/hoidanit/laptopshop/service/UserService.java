@@ -8,4 +8,5 @@ public class UserService {
   public String handleHello() {
     return "Hello from service ";
   }
+
 }
