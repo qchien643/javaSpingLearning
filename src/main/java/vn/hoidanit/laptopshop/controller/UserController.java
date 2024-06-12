@@ -71,11 +71,11 @@ public class UserController {
   public String postUpdateUser(Model model, @ModelAttribute("newUser") User hoidanit) {
     User currentUser = this.userService.getUserById(hoidanit.getId());
     if (currentUser != null) {
-      //currentUser.setEmail(null);
+      // currentUser.setEmail(null);
       currentUser.setAddress(hoidanit.getAddress());
       currentUser.setFullName(hoidanit.getFullName());
       currentUser.setPhone(hoidanit.getPhone());
-      this.userService.handleSaveUser(hoidanit);
+      this.userService.handleSaveUser(currentUser);
     }
     return "redirect:/admin/user";
 
