@@ -10,18 +10,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-  <link href="/css/create.css" rel="stylesheet">
+  <!--<link href="/css/demo.css" rel="stylesheet"> -->
 </head>
 
 <body>
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
-      <div class="col">
+      <div class="col-md-6 col-12 mx-auto">
         <h1> Create User</h1>
-        <hr>
+        <hr />
         <form>
           <div class="mb-3">
-
             <label class="form-label">Email</label>
             <input type="email" class="form-control">
           </div>
