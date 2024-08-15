@@ -38,7 +38,7 @@
                 <h1 class="mt-4">Products</h1>
                 <ol class="breadcrumb mb-4">
                   <li class="breadcrumb-item"> <a href="/admin">Dashboard </a></li>
-                  <li class="breadcrumb-item active"><a href="/admin/product"> Product </a></li>
+                  <li class="breadcrumb-item active"><a href="/admin/product"> Products </a></li>
                 </ol>
                 <div class="mt-5">
                   <div class="row">
