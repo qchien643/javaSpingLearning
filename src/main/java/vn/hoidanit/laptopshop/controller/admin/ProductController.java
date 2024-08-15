@@ -32,7 +32,7 @@ public class ProductController {
     return "admin/product/show";
   }
 
-  @RequestMapping("/admin/product/{id}")
+  @GetMapping("/admin/product/{id}")
   public String getUserDetailPage(Model model, @PathVariable long id) {
     Product product = this.productService.getProductById(id).get();
     model.addAttribute("product", product);
