@@ -17,6 +17,13 @@
           <script>
             $(document).ready(() => {
               const avatarFile = $("#avatarFile");
+              const orgImage = "${newProduct.image}";
+              if (orgImage) {
+                const urlImage = "/images/product/" + orgImage;
+                $("#avatarPreview").attr("src", urlImage);
+                $("#avatarPreview").css({ "display": "block" });
+              }
+
               avatarFile.change(function (e) {
                 const imgURL = URL.createObjectURL(e.target.files[0]);
                 $("#avatarPreview").attr("src", imgURL);
@@ -124,7 +131,7 @@
                               accept=".png, .jpg, .jpeg" />
                           </div>
                           <div class="mb-3 col-12">
-                            <img style="max-height: 250px; display: block;" id="avatarPreview" alt="Avatar preview">
+                            <img style="max-height: 250px; display: none;" id="avatarPreview" alt="Avatar preview">
                           </div>
 
                           <div class="mb-5 col-12">

@@ -7,13 +7,13 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-  Product save(Product hoidanit);
+  // Product save(Product hoidanit);
 
-  List<Product> findOneByName(String name);
+  // List<Product> findOneByName(String name);
 
-  List<Product> findAll();
+  // List<Product> findAll();
 
-  Product findById(long id);
+  // Product findById(long id);
 
-  void deleteById(long id);
+  // void deleteById(long id);
 }

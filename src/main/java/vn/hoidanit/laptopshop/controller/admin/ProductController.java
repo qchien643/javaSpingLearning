@@ -1,6 +1,7 @@
 package vn.hoidanit.laptopshop.controller.admin;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.validation.Valid;
 import vn.hoidanit.laptopshop.domain.Product;
-import vn.hoidanit.laptopshop.domain.User;
 import vn.hoidanit.laptopshop.service.ProductService;
 import vn.hoidanit.laptopshop.service.UploadService;
 
@@ -34,7 +34,7 @@ public class ProductController {
 
   @RequestMapping("/admin/product/{id}")
   public String getUserDetailPage(Model model, @PathVariable long id) {
-    Product product = this.productService.getProductById(id);
+    Product product = this.productService.getProductById(id).get();
     model.addAttribute("product", product);
     model.addAttribute("id", id);
     return "admin/product/detail";
@@ -64,18 +64,27 @@ public class ProductController {
 
   @RequestMapping("/admin/product/update/{id}")
   public String getUpdateProductDetailPage(Model model, @PathVariable long id) {
-    Product currentProduct = this.productService.getProductById(id);
-    model.addAttribute("newProduct", currentProduct);
+    Optional<Product> currentProduct = this.productService.getProductById(id);
+    model.addAttribute("newProduct", currentProduct.get());
     return "admin/product/update";
   }
 
   @PostMapping("/admin/product/update")
-  public String postUpdateUser(Model model, @ModelAttribute("newProduct") Product product,
+  public String postUpdateUser(Model model, @ModelAttribute("newProduct") @Valid Product product,
+      BindingResult newProductBindingResult,
       @RequestParam("hoidanitFile") MultipartFile file) {
-    Product currentProduct = this.productService.getProductById(product.getId());
-    // String image = this.uploadService.handleSaveUploadFile(file, "product");
-    // product.setImage(image);
+    // Validate
+    if (newProductBindingResult.hasErrors()) {
+      return "/admin/product/update";
+    }
+    Product currentProduct = this.productService.getProductById(product.getId()).get();
+
     if (currentProduct != null) {
+      // update new image
+      if (!file.isEmpty()) {
+        String image = this.uploadService.handleSaveUploadFile(file, "product");
+        currentProduct.setImage(image);
+      }
       currentProduct.setName(product.getName());
       currentProduct.setPrice(product.getPrice());
       currentProduct.setDetailDesc(product.getDetailDesc());
@@ -83,7 +92,7 @@ public class ProductController {
       currentProduct.setQuantity(product.getQuantity());
       currentProduct.setFactory(product.getFactory());
       currentProduct.setTarget(product.getTarget());
-      currentProduct.setImage(product.getImage());
+
       this.productService.createProduct(currentProduct);
     }
     return "redirect:/admin/product";

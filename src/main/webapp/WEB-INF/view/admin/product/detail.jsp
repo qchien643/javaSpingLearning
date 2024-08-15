@@ -12,6 +12,17 @@
         <meta name="author" content="Hỏi Dân IT" />
         <title>Product detail</title>
         <link href="/css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(() => {
+            const orgImage = "${product.image}";
+            if (orgImage) {
+              const urlImage = "/images/product/" + orgImage;
+              $("#avatarPreview").attr("src", urlImage);
+              $("#avatarPreview").css({ "display": "block" });
+            }
+          });
+        </script>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
       </head>
 
@@ -36,8 +47,8 @@
                       </div>
                       <hr />
                       <div class="card" style="width: 60%;">
-                        <img src="${product.image}" style="max-height: 250px; display: block;" id="productImage"
-                          alt="Product image">
+                        <img style="display: none;" id="avatarPreview" alt="Product preview">
+                        <!-- <img src="/images/product/${product.image}" id="avatarPreview" alt="Product preview"> -->
                         <div class="card-header">
                           Product information
                         </div>
