@@ -40,6 +40,7 @@
                   <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"> <a href="/admin">Dashboard </a></li>
                     <li class="breadcrumb-item active"><a href="/admin/user"> Users </a></li>
+                    <li class="breadcrumb-item active"><a href="/admin/user/create"> Create </a></li>
                   </ol>
                   <div class="mt-5">
                     <div class="row">
@@ -57,7 +58,6 @@
                             <form:input type="email" class="form-control ${not empty errorEmail ? 'is-invalid' : ''}"
                               path="email" />
                             ${errorEmail}
-                            <!-- <form:errors path="email" cssClass="invalid-feedback" /> -->
                           </div>
                           <div class="mb-3 col-12 col-md-6">
                             <c:set var="errorPassword">

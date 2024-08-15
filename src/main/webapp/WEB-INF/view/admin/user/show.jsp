@@ -26,11 +26,12 @@
                 <li class="breadcrumb-item"> <a href="/admin"> Dashboard </a></li>
                 <li class="breadcrumb-item active"><a href="/admin/user"> Users </a></li>
               </ol>
+              
               <div class="mt-5">
                 <div class="row">
                   <div class="col-12 mx-auto">
                     <div class="d-flex justify-content-between">
-                      <h3> Table Users</h3>
+                      <h3>Table Users</h3>
                       <a href="/admin/user/create">
                         <button class="btn btn-primary">Create user</button>
                       </a>

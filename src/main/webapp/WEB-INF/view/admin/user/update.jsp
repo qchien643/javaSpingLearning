@@ -26,6 +26,7 @@
                 <ol class="breadcrumb mb-4">
                   <li class="breadcrumb-item"> <a href="/admin">Dashboard </a></li>
                   <li class="breadcrumb-item active"><a href="/admin/user"> Users </a></li>
+                  <li class="breadcrumb-item active"> Update</li>
                 </ol>
                 <div class="container mt-5">
                   <div class="row">

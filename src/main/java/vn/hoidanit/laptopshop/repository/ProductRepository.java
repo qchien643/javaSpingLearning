@@ -9,7 +9,11 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
   Product save(Product hoidanit);
 
+  List<Product> findOneByName(String name);
+
   List<Product> findAll();
 
   Product findById(long id);
+
+  void deleteById(long id);
 }

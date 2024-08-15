@@ -26,11 +26,12 @@
                 <ol class="breadcrumb mb-4">
                   <li class="breadcrumb-item"> <a href="/admin">Dashboard </a></li>
                   <li class="breadcrumb-item active"><a href="/admin/user"> Users </a></li>
+                  <li class="breadcrumb-item active"> Delete ID = ${id}</li>
                 </ol>
                 <div class="container mt-5">
                   <div class="row">
                     <div class="col-md-6 col-12 mx-auto">
-                      <h3> Delete user with id = ${id}</h3>
+                      <h3> Delete user with ID = ${id}</h3>
                       <hr />
                       <div class="alert alert-danger">
                         Are you sure to delete this user?

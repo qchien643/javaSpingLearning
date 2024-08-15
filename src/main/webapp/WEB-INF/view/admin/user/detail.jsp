@@ -26,12 +26,13 @@
                 <ol class="breadcrumb mb-4">
                   <li class="breadcrumb-item"> <a href="/admin"> Dashboard </a></li>
                   <li class="breadcrumb-item active"><a href="/admin/user"> Users </a></li>
+                  <li class="breadcrumb-item active"> Detail ID = ${id}</li>
                 </ol>
                 <div class="container mt-5">
                   <div class="row">
                     <div class="col-12 mx-auto">
                       <div class="d-flex justify-content-between">
-                        <h3> User detail id = ${id}</h3>
+                        <h3> User detail ID = ${id}</h3>
                       </div>
                       <hr />
                       <div class="card" style="width: 60%;">

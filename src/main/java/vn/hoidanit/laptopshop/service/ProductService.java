@@ -17,4 +17,20 @@ public class ProductService {
   public List<Product> getAllProducts() {
     return this.productRepository.findAll();
   }
+
+  public List<Product> getOneUserByName(String name) {
+    return this.productRepository.findOneByName(name);
+  }
+
+  public Product getUserById(long id) {
+    return this.productRepository.findById(id);
+  }
+
+  public Product createProduct(Product product) {
+    return this.productRepository.save(product);
+  }
+
+  public void deleteUser(long id) {
+    this.productRepository.deleteById(id);
+  }
 }
