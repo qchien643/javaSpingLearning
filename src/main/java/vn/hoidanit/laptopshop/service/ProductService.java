@@ -22,7 +22,7 @@ public class ProductService {
     return this.productRepository.findOneByName(name);
   }
 
-  public Product getUserById(long id) {
+  public Product getProductById(long id) {
     return this.productRepository.findById(id);
   }
 
@@ -30,7 +30,7 @@ public class ProductService {
     return this.productRepository.save(product);
   }
 
-  public void deleteUser(long id) {
+  public void deleteProduct(long id) {
     this.productRepository.deleteById(id);
   }
 }

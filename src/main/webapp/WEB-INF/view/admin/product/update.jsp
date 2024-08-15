@@ -2,7 +2,6 @@
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
       <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
         <!DOCTYPE html>
         <html lang="en">
 
@@ -12,7 +11,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <meta name="description" content="Hỏi Dân IT - Dự án laptopshop" />
           <meta name="author" content="Hỏi Dân IT" />
-          <title>Create Product</title>
+          <title>Update product</title>
           <link href="/css/styles.css" rel="stylesheet" />
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
           <script>
@@ -25,7 +24,6 @@
               });
             });
           </script>
-
           <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         </head>
 
@@ -39,15 +37,15 @@
                   <h1 class="mt-4">Manage Products</h1>
                   <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"> <a href="/admin">Dashboard </a></li>
-                    <li class="breadcrumb-item active"><a href="/admin/product"> Products </a></li>
-                    <li class="breadcrumb-item active"><a href="/admin/product/create"> Create </a></li>
+                    <li class="breadcrumb-item active"><a href="/admin/product"> Product </a></li>
+                    <li class="breadcrumb-item active"> Update</li>
                   </ol>
-                  <div class="mt-5">
+                  <div class="container mt-5">
                     <div class="row">
                       <div class="col-md-6 col-12 mx-auto">
-                        <h1> Create a product</h1>
+                        <h1> Update Product</h1>
                         <hr />
-                        <form:form method="post" action="/admin/product/create" modelAttribute="newProduct" class="row"
+                        <form:form method="post" action="/admin/product/update" modelAttribute="newProduct" class="row"
                           enctype="multipart/form-data">
 
                           <div class="mb-3 col-12 col-md-6">
@@ -126,11 +124,11 @@
                               accept=".png, .jpg, .jpeg" />
                           </div>
                           <div class="mb-3 col-12">
-                            <img style="max-height: 250px; display: none;" id="avatarPreview" alt="Avatar preview">
+                            <img style="max-height: 250px; display: block;" id="avatarPreview" alt="Avatar preview">
                           </div>
 
                           <div class="mb-5 col-12">
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="submit" class="btn btn-warning">Update</button>
                           </div>
 
                         </form:form>
