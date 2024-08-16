@@ -28,6 +28,23 @@
                         <h3 class="text-center font-weight-light my-4">Login</h3>
                       </div>
                       <div class="card-body">
+                        <!-- <form:form method="post" action="/login" modelAttribute="login">
+                          <div class="form-floating mb-3">
+                            <form:input class="form-control" type="email" placeholder="name@example.com" path="email" />
+                            <label>Email address</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <form:input class="form-control" type="password" placeholder="Password" path="password" />
+                            <label>Password</label>
+                          </div>
+                          <div class="mt-4 mb-0">
+                            <div class="d-grid">
+                              <button class="btn btn-primary btn-block">
+                                Login
+                              </button>
+                            </div>
+                          </div>
+                        </form:form> -->
                         <form>
                           <div class="form-floating mb-3">
                             <input class="form-control" type="email" placeholder="name@example.com" />
