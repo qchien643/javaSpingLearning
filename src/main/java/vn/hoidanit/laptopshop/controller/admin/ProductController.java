@@ -70,12 +70,13 @@ public class ProductController {
 
   @PostMapping("/admin/product/update")
   public String postUpdateUser(Model model, @ModelAttribute("newProduct") @Valid Product product,
-      BindingResult newProductBindingResult,
-      @RequestParam("hoidanitFile") MultipartFile file) {
+      BindingResult newProductBindingResult, @RequestParam("hoidanitFile") MultipartFile file) {
+
     // Validate
     if (newProductBindingResult.hasErrors()) {
       return "/admin/product/update";
     }
+
     Product currentProduct = this.productService.getProductById(product.getId()).get();
 
     if (currentProduct != null) {
