@@ -20,7 +20,7 @@ public class UserController {
 
   private final UserService userService;
   private final UploadService uploadService;
-  private PasswordEncoder passwordEncoder;
+  private final PasswordEncoder passwordEncoder;
 
   public UserController(UserService userService,
       UploadService uploadService,
