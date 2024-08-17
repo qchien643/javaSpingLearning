@@ -86,7 +86,11 @@ public class ProductService {
           this.cartDetailRepository.save(oldDetail);
         }
       }
-
     }
   }
+
+  public Cart fetchByUser(User user) {
+    return this.cartRepository.findByUser(user);
+  }
+
 }
