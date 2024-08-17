@@ -40,11 +40,10 @@ public class SecurityConfiguration {
     return authProvider;
   }
 
-@Bean
-public AuthenticationSuccessHandler customSuccessHandler(){
+  @Bean
+  public AuthenticationSuccessHandler customSuccessHandler() {
     return new CustomSuccessHandler();
-}
-
+  }
 
   @Bean
   SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -61,7 +60,8 @@ public AuthenticationSuccessHandler customSuccessHandler(){
             .failureUrl("/login?error")
             .successHandler(
                 customSuccessHandler())
-            .permitAll());
+            .permitAll())
+        .exceptionHandling(ex -> ex.accessDeniedPage("/access-deny"));
     return http.build();
   }
 }
