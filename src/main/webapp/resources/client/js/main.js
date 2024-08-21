@@ -152,7 +152,7 @@
     const input = button.parent().parent().find('input');
     input.val(newVal);
     
-    //
+    //set form index
     const index = input.attr("data-cart-detail-index");
     const element = document.getElementById(`cartDetails${index}.quantity`);
     $(element).val(newVal);

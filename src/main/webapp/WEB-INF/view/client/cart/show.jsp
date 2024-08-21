@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-      <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+      <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
         <!DOCTYPE html>
         <html lang="en">
 
@@ -79,7 +79,7 @@
                         </td>
                       </tr>
                     </c:if>
-                    <c:forEach var="cartDetail" items="${cartDetails}">
+                    <c:forEach var="cartDetail" items="${cartDetails}" varStatus="status">
                       <tr>
                         <th scope="row">
                           <div class="d-flex align-items-center">
@@ -171,11 +171,12 @@
                             <div class="mb-3">
                               <div class="form-group">
                                 <label>Id:</label>
-                                <form:input type="text" class="form-control" path="cartDetails[${status.index}].id" />
+                                <form:input type="text" class="form-control" value="${cartDetail.id}"
+                                  path="cartDetails[${status.index}].id" />
                               </div>
                               <div class="form-group">
                                 <label>Quantity:</label>
-                                <form:input type="text" class="form-control"
+                                <form:input type="text" class="form-control" value="${cartDetail.quantity}"
                                   path="cartDetails[${status.index}].quantity" />
                               </div>
                             </div>
